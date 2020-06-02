@@ -5,7 +5,6 @@ const socket = io('')
 // DOM Elemments
 const msgInput          = $("#msgInput")
 const send              = $("#send")
-const output             = $("#output")
 const actions           = $("#actions")
 const everyUser         = $("#everyUser")
 const customChatCont   = $("#customChatCont")

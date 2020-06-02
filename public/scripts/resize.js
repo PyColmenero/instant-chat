@@ -1,6 +1,7 @@
 var proportion = undefined;
 var realDevide;
 
+const output = $("#output")
 
 
 window.addEventListener("resize", function(event){
@@ -22,19 +23,17 @@ function getProportion(){
     proportion = false;
     if(widthWindow >= heightWindow){
         proportion = true;
-        
-        try{
-            everyUsersMovile.css("display","none")
-            everyChat.css("display","block")
-        } catch { }
 
     } else {
         
         try{
             closeNav()
         } catch { }
+        
     }
-    
+
+    changeOutHeight()
+
     //Real Proportiion
     if(window.screen.width > window.screen.height){
         realDevide = true;
@@ -42,10 +41,22 @@ function getProportion(){
         realDevide = false;
     }
 
-    //mobileChatMeasures()
-
 }
 
+function changeOutHeight(){
+
+    bodyH =     window.innerHeight
+
+    navH =      $("nav").outerHeight()
+    infoH =     $("#info").outerHeight()
+    inputs =    $("#inputs").outerHeight()
+
+    summatori = ((navH + infoH + inputs) + 20)
+
+    outputH = (bodyH - summatori)
+
+    output.height( outputH  )
+}
 
 // function mobileChatMeasures(){
 //     console.log("ifgeuig")

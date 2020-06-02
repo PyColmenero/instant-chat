@@ -22,12 +22,10 @@
                     text-align: center;
                 }
             #output{
-                height: 83vh;
-
                 border-bottom: 0;
                 overflow-x: hidden;
                 overflow-y: scroll;
-                padding: 1vh;
+                padding: 10px;
 
                 box-sizing: border-box;
             }
