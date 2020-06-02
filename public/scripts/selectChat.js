@@ -20,7 +20,7 @@ chatSelect.click(function(){
 
         chatP.text(chat)
 
-
+        mobileChatMeasures()
         closeNav()
     }
 
@@ -32,6 +32,8 @@ customChat.click(function(){
         contchat.css("display", "none")
         customChatCont.css("display", "block")
         selectOne.css("display", "none")
+
+        mobileChatMeasures()
         closeNav()
     }
 })

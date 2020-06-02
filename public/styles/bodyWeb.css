@@ -1,7 +1,7 @@
 #bodyWeb{
     width: 80%;
     height: 93vh;
-    padding: 1vh;
+    padding: 10px;
 
     overflow-y: scroll;
 
@@ -92,11 +92,13 @@
 
                             }
                                 .otherMSG label{
-                                    padding: 1vh .5vh;
+                                    padding: .5vh;
+                                    padding-bottom: 0;
                                     color: #555;
                                 }
                                 .ownMSG p{
-                                    padding: 1vh;
+                                    padding: .5vh;
+                                    padding-bottom: 0;
                                     color: rgb(114, 114, 114);
 
                                     text-align: right;

@@ -1,4 +1,3 @@
-
 var proportion = undefined;
 
 getProportion()
@@ -6,6 +5,8 @@ getProportion()
 window.addEventListener("resize", function(event){
     
     getProportion()
+
+    
 
     if(proportion){
         everyUser.html(everyConnectes)
@@ -35,5 +36,24 @@ function getProportion(){
             closeNav()
         } catch { }
     }
+
+}
+
+mobileChatMeasures()
+function mobileChatMeasures(){
+
+    nav = $("nav")
+    weba = $("#web")
+
+    weba.css("height", (window.innerHeight - nav.height()) )
+
+    outputa = $("#output")
+    infoChat =$("#infoChat")
+    currentUsernameDiv =$("#currentUsernameDiv")
+    barInputs = $("#barInputs")
+
+    webH = weba.height()
+    total = ( webH - (infoChat.height()+currentUsernameDiv.height()+barInputs.height()+20 ) )
+    outputa.css("height",  total)
 
 }
