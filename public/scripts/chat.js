@@ -25,12 +25,15 @@ msgInput.on('keyup', function (e) {
 });
 
 function sendMSG(){
-    socket.emit('chatMsg', {
-        username: username,
-        message: msgInput.val(),
-        chat: chat
-    })
-    msgInput.val("")
+    msg = msgInput.val()
+    if(msg.length > 3 && msg.length < 16){        
+        socket.emit('chatMsg', {
+            username: username,
+            message: msg,
+            chat: chat
+        })
+        msgInput.val("")
+    }
 }
 
 msgInput.on('keypress', function(){

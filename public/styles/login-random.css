@@ -26,8 +26,14 @@
             }
             #valid1, #valid2{
                 height: 3vh;
-                padding: 0 2vh;
+                padding: 0 .5vh;
             }
+                #validP1{
+                    padding: 1vh 0;
+                    color: darkred;
+                    font-size: 1.8vh;
+                    font-weight: 800;
+                }
         #enterChat, #enterCustomChat{
             padding: 1vh;
             border: 0;
