@@ -55,7 +55,7 @@ function changeOutHeight(){
 
     outputH = (bodyH - summatori)
 
-    $("body").height( outputH + summatori )
+    $("body").height( bodyH )
 
     //output.append( outputH+' , '+summatori + " , " + window.innerWidth)
 
