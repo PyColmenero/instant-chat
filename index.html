@@ -1,78 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Colmenero's Chat</title>
+<html lang="en" class="notranslate" translate="no">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Colmenero's Chat</title>
 
-        <!-- STYLES -->
-        <link rel="stylesheet" href="./public/styles/navbar.css">
-        <link rel="stylesheet" href="./public/styles/aside.css">
-        <link rel="stylesheet" href="./public/styles/bodyWeb.css">
-        <link rel="stylesheet" href="./public/styles/general.css">
+            <!-- STYLES -->
+            <link rel="stylesheet" href="./public/styles/navbar.css">
+            <link rel="stylesheet" href="./public/styles/aside.css">
+            <link rel="stylesheet" href="./public/styles/bodyWeb.css">
+            <link rel="stylesheet" href="./public/styles/general.css">
+            <link rel="stylesheet" href="./public/styles/login-random.css">
+            
+
+
+            <!-- GOOGLE FONTS -->
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+                <!-- font-family: 'Playfair Display', serif; -->
+
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Ubuntu&display=swap" rel="stylesheet">
+                <!-- font-family: 'Ubuntu', sans-serif; -->
+
+                <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+                <!-- font-family: 'Rubik', sans-serif; -->
+
+                <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+                <!-- font-family: 'Nunito', sans-serif; -->
+
+
+            <!-- JQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+            <!-- ICONS -->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+            <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
         
 
+        </head>
+        <body>
+            <nav>
+                <div id="hambChats"><img src="./medias/hamburger.png" alt=""></div>
+                <div id="centerNav"><h1 id="logo" class="noselect">Colmenero's Chat</h1></div>
+                <div id="hambUsersC"></div>
+            </nav>
 
-        <!-- GOOGLE FONTS -->
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-            <!-- font-family: 'Playfair Display', serif; -->
+            <div id="web">
 
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Ubuntu&display=swap" rel="stylesheet">
-            <!-- font-family: 'Ubuntu', sans-serif; -->
+                <div id="black"></div>
 
-            <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-            <!-- font-family: 'Rubik', sans-serif; -->
-
-            <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-            <!-- font-family: 'Nunito', sans-serif; -->
-
-
-        <!-- JQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-        <!-- ICONS -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+                <aside>
+                    <div id="chatsOrUsers">
+                        <div class="noselect" id="chatsButton">CHATS</div>
+                        <div class="noselect" id="usersButton">USERS</div>
+                    </div>
+                    <div id="everyChat">
+                        <ul>
+                            <li class="chatSelect"> <p class="noselect">Sevilla</p><label id="SevillaC">   </label></li>
+                            <li class="chatSelect"> <p class="noselect">Malaga</p><label id="MalagaC">    </label></li>
+                            <li class="chatSelect"> <p class="noselect">Estudios</p><label id="EstudiosC">  </label></li>
+                            <li class="chatSelect"> <p class="noselect">Pareja</p><label id="ParejaC">    </label></li>
+                            <li class="chatSelect"> <p class="noselect">Astronomia</p><label id="AstronomiaC"></label></li>
+                            <li class="chatSelect"> <p class="noselect">Fiesta</p><label id="FiestaC">    </label></li>
+                            <li class="chatSelect"> <p class="noselect">Meeting</p><label id="MeetingC">   </label></li>
+                            <li class="chatSelect"> <p class="noselect">18</p><label id="18C">       </label></li>
+                            <br>
+                            <li class="noselect" id="customChat">CUSTOM</li>
+                        </ul>
+                    </div>
+                    <div id="everyUsersMovile" style="display: none;">
         
+                    </div>
+                        
+                </aside>
 
-    </head>
-    <body>
-        <nav>
-            <div id="hambChats"><img src="./medias/hamburger.png" alt=""></div>
-            <div id="centerNav"><h1 id="logo" class="noselect">Colmenero's Chat</h1></div>
-            <div id="hambUsersC"></div>
-        </nav>
-        <div id="black"></div>
-        <div id="web">
-            <aside>
-                <div id="chatsOrUsers">
-                    <div class="noselect" id="chatsButton">CHATS</div>
-                    <div class="noselect" id="usersButton">USERS</div>
-                </div>
-                <div id="everyChat">
-                    <ul>
-                        <li class="chatSelect"> <p class="noselect">Sevilla</p><label id="SevillaC">   </label></li>
-                        <li class="chatSelect"> <p class="noselect">Malaga</p><label id="MalagaC">    </label></li>
-                        <li class="chatSelect"> <p class="noselect">Estudios</p><label id="EstudiosC">  </label></li>
-                        <li class="chatSelect"> <p class="noselect">Pareja</p><label id="ParejaC">    </label></li>
-                        <li class="chatSelect"> <p class="noselect">Astronomia</p><label id="AstronomiaC"></label></li>
-                        <li class="chatSelect"> <p class="noselect">Fiesta</p><label id="FiestaC">    </label></li>
-                        <li class="chatSelect"> <p class="noselect">Meeting</p><label id="MeetingC">   </label></li>
-                        <li class="chatSelect"> <p class="noselect">18</p><label id="18C">       </label></li>
-                        <br>
-                        <li class="noselect" id="customChat">CUSTOM</li>
-                    </ul>
-                </div>
-                <div id="everyUsersMovile" style="display: none;">
-
-                </div>
-                     
-            </aside>
-            <div id="bodyWeb">
-                <div id="selectOne" style="display: none;">
-                    <p class="noselect">Select Any Chat</p>
-                </div>
                 <div id="chat-username">
                     <p class="resaltedP">Set Username:</p>
                     <div>
@@ -95,63 +96,48 @@
                     <button id="enterCustomChat">Submit</button>
                 </div>
 
-                <div id="cont-chat" style="display: none;">
-                    <div id="infoChat">
-                        <p class="resaltedP" id="chatP">...</p>
-                        <p class="resaltedP" id="ammountP">...</p>
-                    </div>
-                    <div id="chatsinfCont">
-                        
-                        <div id="chatChat">
-                            <div id="currentUsernameDiv">
-                                <p  class="resaltedP" id="currentUsernameP"></p>
-                            </div>
-                            <div id="inputsChat">
-                                <div id="chatWindow">
-                                    <div id="output">
-            
-                                    </div>
-                                    <!-- <div id="actions"></div> -->
-                                </div>
-                                <div id="barInputs">
-                                    <div id="divInputMsg">
-                                        <input id="msgInput" type="text" placeholder="Type something...">
-                                    </div>
-                                    <div id="divButtonMsg">
-                                        <button id="send"><i class="far fa-paper-plane"></i></button>
-                                    </div>
-                                </div>
-                                
-                            </div>
-
-                        </div>
-                        <div id="chatUsers">
-                            <p  class="resaltedP">Users Connected</p>
-                            <div id="everyUser">
-
-                            </div>
-                        </div>
-
-                    </div>
-
+                <div id="selectOne" style="display: none;">
+                    <p class="noselect">Select Any Chat</p>
                 </div>
+
+                <div id="bodyWeb" style="display: none;">
+                    <div id="bodyContStrech">
+
+                        <div id="info">
+                            <div id="infoChat">
+                                <p class="resaltedP" id="chatP">...</p>
+                                <p class="resaltedP" id="ammountP">...</p>
+                            </div>
+                        </div>
+
+                        <div id="output">
+                    
+                        </div>
+
+                        <div id="inputs">
+                            <div id="divInputMsg">
+                                <input id="msgInput" type="text" placeholder="Type something...">
+                            </div>
+                            <div id="divButtonMsg">
+                                <button id="send"><i class="far fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
             </div>
-        </div>
-
-
-
-        <script src="./socket.io/socket.io.js"></script>
-
-        <script src="./public/scripts/resize.js"></script>
-        <script src="./public/scripts/openAsides.js"></script>
-
-        <script src="./public/scripts/chat.js"></script>
-        <script src="./public/scripts/usersCounter.js"></script>
-        <script src="./public/scripts/login.js"></script>
-        <script src="./public/scripts/selectChat.js"></script>
-
-        
-
-        
+    
+    
+            <script src="./socket.io/socket.io.js"></script>
+    
+            <script src="./public/scripts/resize.js"></script>
+            <script src="./public/scripts/openAsides.js"></script>
+    
+            <script src="./public/scripts/chat.js"></script>
+            <script src="./public/scripts/usersCounter.js"></script>
+            <script src="./public/scripts/login.js"></script>
+            <script src="./public/scripts/selectChat.js"></script>
+    
     </body>
 </html>

@@ -15,9 +15,9 @@ hambChats.click(function(){
     
 })
 
-black.click(function(){
-    closeNav()
-})
+// black.click(function(){
+//     closeNav()
+// })
 
 function closeNav(){
     if(boolAside1 && !proportion || !realDevide){

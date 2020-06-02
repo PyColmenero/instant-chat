@@ -31,7 +31,7 @@ body{
 }
     
 #selectOne{
-    width: 100%;
+    width: 70%;
     height: 90vh;
     display: flex;
     align-items: center;
@@ -42,3 +42,11 @@ body{
         color: grey;
         font-size: 5vh;
     }
+
+@media screen and (max-device-aspect-ratio: 1/1) {
+
+    #selectOne{
+        width: 100%;
+    }
+
+}

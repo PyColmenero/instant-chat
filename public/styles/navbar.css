@@ -5,7 +5,7 @@ nav{
     height: 7vh;
 }
     #hambChats{
-        display: none;
+        width: 15%;
     }
     #hambChats:hover{
         background-color: #313164;
@@ -14,11 +14,11 @@ nav{
             height: 5vh;
             padding: 1vh 0;
             margin: 0 auto;
-            display: block;
+            display: none;
             filter: invert(100%);
         }
     #centerNav{
-        width: 100%;
+        width: 70%;
     }
         #centerNav h1{
             text-align: center;
@@ -27,7 +27,7 @@ nav{
             padding: 1vh 0;
         }
     #hambUsersC{
-        display: none;
+        width: 15%;
     }
     #hambUsersC:hover{
         background-color: #313164;
@@ -42,15 +42,7 @@ nav{
 
 @media screen and (max-device-aspect-ratio: 1/1) {
 
-    #hambChats{
-        width: 20%;
-        display: block;
-    }
-    #centerNav{
-        width: 70%;
-    }
-    #hambUsersC{
-        width: 20%;
+    #hambChats img{
         display: block;
     }
 

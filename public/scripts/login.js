@@ -9,6 +9,7 @@ const customChatInput = $("#customChatInput")
 
 const chatusername = $("#chat-username")
 const contchat = $("#cont-chat")
+const selectOne = $("#selectOne")
 
 var username = undefined
 

@@ -38,21 +38,15 @@ msgInput.on('keypress', function(){
     //socket.emit('chatTyping', usernameInput.val())
 })
 
-msgInput.click(function(){
-    mobileChatMeasures()
-})
 
 //Get Message
 socket.on('newMessage', function(data){
     if(username && chat == data.chat){
-        console.log(data.username)
         if(data.username == username){
             output.append('<div class="ownMSG"><div> <p>'+data.message+'</p> </div></div>')
         } else {
             output.append('<div class="otherMSG"><div><label>'+data.username+': </label>  <label>'+data.message+'</label></div></div>')
         }
-
-        
     }
 })
 

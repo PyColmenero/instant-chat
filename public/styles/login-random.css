@@ -1,0 +1,48 @@
+#login-random{
+    width: 100%;
+}
+
+    #chat-username, #customChatCont{
+        width: 50%;  
+        margin: 5vh auto; 
+    }
+        
+        #chat-username > div, #customChatCont > div{
+            border: 1px solid #181818;
+            padding: 2vh;
+        }
+            #usernameInput, #customChatInput{
+                padding: 1vh;
+                border: 0;
+                width: 100%;
+                margin: 0 auto;
+
+                background-color: #EEEDED;
+                /* border-left: 1px solid #b9b9b9;
+                border-right: 1px solid #b9b9b9; */
+
+                display: block;
+                box-sizing: border-box;
+            }
+            #valid1, #valid2{
+                height: 3vh;
+                padding: 0 2vh;
+            }
+        #enterChat, #enterCustomChat{
+            padding: 1vh;
+            border: 0;
+            width: 100%;
+            border: 1px solid #181818;
+            border-top: 0;
+        }
+
+    
+@media screen and (max-device-aspect-ratio: 1/1) {
+
+    #chat-username, #customChatCont{
+
+        width: 80%;
+
+    }
+
+}

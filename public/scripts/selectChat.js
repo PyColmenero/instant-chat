@@ -2,7 +2,7 @@
 const chatSelect = $(".chatSelect")
 const customChat = $("#customChat")
 const chatP = $("#chatP")
-const selectOne = $("#selectOne")
+const bodyWeb = $("#bodyWeb")
 
 chatSelect.click(function(){
 
@@ -12,15 +12,14 @@ chatSelect.click(function(){
         output.html('')
 
         chatusername.css("display", "none")
-        contchat.css("display", "block")
         customChatCont.css("display", "none")
+        bodyWeb.css("display", "block")
         selectOne.css("display", "none")
         
         socket.emit('changeChat', {usern: username, chat: chat})
 
         chatP.text(chat)
 
-        mobileChatMeasures()
         closeNav()
     }
 
@@ -29,11 +28,10 @@ chatSelect.click(function(){
 customChat.click(function(){
     if(username){
         chatusername.css("display", "none")
-        contchat.css("display", "none")
         customChatCont.css("display", "block")
+        bodyWeb.css("display", "none")
         selectOne.css("display", "none")
 
-        mobileChatMeasures()
         closeNav()
     }
 })

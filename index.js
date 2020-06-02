@@ -97,13 +97,15 @@ const server = app.listen(app.get('port'), () => {
                         break;
                     }
                 }
-                console.log(everyChat);
+                console.log(beforeChat);
                 console.log(usersConnected)
                 io.sockets.emit('newConnected', {   usern: data.usern, 
                                                     con: "connected", 
                                                     chat: currenChat,
                                                     everyUsers: usersConnected,
-                                                    everyChat: everyChat});
+                                                    everyChat: everyChat,
+                                                    beforeChat: beforeChat,
+                                                    totalDisconnect: false});
                 
             })
 
@@ -123,27 +125,30 @@ const server = app.listen(app.get('port'), () => {
             socket.on('disconnect', () => {
                 index = -1;
                 chat = '';
+                username = '';
                 for(let e = 0; e < usersConnected.length; e++){
                     if(usersConnected[e].id == socket.id){
                         index = e;
                         chat = usersConnected[e].chat
+                        username = usersConnected[e].usern
                     }
                 }                
                 
                 for(let e = 0; e < 8; e++){
                     if(everyChat[e].chatName==chat){
-                        everyChat[e].chatAmmount--;console.log("yeah")
+                        everyChat[e].chatAmmount--;
                     }
                 }
-                
                 idConnected.splice (idConnected.indexOf(socket.id), 1);
                 if(index != -1){
                     usersConnected.splice ( (index), 1);
 
-                    io.sockets.emit('newConnected', {   usern:"", 
+                    io.sockets.emit('newConnected', {   usern: username, 
                                                         con: "", 
+                                                        chat: chat,
                                                         everyUsers: usersConnected,
-                                                        everyChat: everyChat})
+                                                        everyChat: everyChat,
+                                                        totalDisconnect: true})
                 }
 
                 console.log(usersConnected);
