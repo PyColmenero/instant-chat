@@ -1,0 +1,184 @@
+#bodyWeb{
+    width: 80%;
+    height: 93vh;
+    padding: 1vh;
+
+    overflow-y: scroll;
+
+    box-sizing: border-box;
+}
+
+    #chat-username, #customChatCont{
+        width: 50%;  
+        margin: 5vh auto; 
+    }
+        
+        #chat-username > div, #customChatCont > div{
+            border: 1px solid #181818;
+            padding: 2vh;
+        }
+            #usernameInput, #customChatInput{
+                padding: 1vh;
+                border: 0;
+                width: 100%;
+                margin: 0 auto;
+
+                background-color: #EEEDED;
+                /* border-left: 1px solid #b9b9b9;
+                border-right: 1px solid #b9b9b9; */
+
+                display: block;
+                box-sizing: border-box;
+            }
+            #valid1, #valid2{
+                height: 3vh;
+                padding: 0 2vh;
+            }
+        #enterChat, #enterCustomChat{
+            padding: 1vh;
+            border: 0;
+            width: 100%;
+            border: 1px solid #181818;
+            border-top: 0;
+        }
+
+
+
+
+    #cont-chat{
+        border: 1px solid #ddd;
+        box-shadow: 1px 3px 5px rgba(0,0,0, 0.5);
+        width: 90%;
+        margin: 5vh auto;
+    }
+        #infoChat{
+            display: flex;
+        }
+            #chatP{
+                width: 90%;
+            }
+            #ammountP{
+                width: 10%;
+                text-align: center;
+            }
+        #chatsinfCont{
+            display: flex;
+            justify-content: space-between;
+        }
+            #chatChat{
+                padding: 2vh;
+                width: 65%;
+            }
+                #inputsChat{
+                    
+                }
+                    #chatWindow{
+                        border-bottom: 1px solid #e9e9e9;
+                        color: #555;
+                    }
+                        #output{
+                            height: 55vh;
+                            border: 1px solid #b9b9b9;
+                            border-bottom: 0;
+                            overflow-x: hidden;
+                            overflow-y: scroll;
+                            padding: 1vh;
+                            box-sizing: border-box;
+                        }
+                            #output p{
+                                color: #aaa;
+                                padding: 1vh;
+                                border-bottom: 1px solid #e9e9e9;
+                                color: #555;
+                            }
+                        #actions{
+                            padding: 1vh;
+                            height: 3vh;
+                            border-left: 1px solid #b9b9b9;
+                            border-right: 1px solid #b9b9b9;
+                        }
+                    #barInputs{
+                        display: flex
+                    }
+                        #divInputMsg{
+                            width: 90%;
+                        }
+                        #divButtonMsg{
+                            width: 10%;
+                        }
+                            #msgInput, #send{
+                                padding: 1vh;
+                                border-radius: 0;
+                                border: 0;
+                                width: 100%;
+                                height: 5vh;
+                                font-size: 2vh;
+
+                                background-color: #EEEDED;
+                                border-left: 1px solid #b9b9b9;
+                                border-right: 1px solid #b9b9b9;
+
+                                display: block;
+                                box-sizing: border-box;
+                            }
+                            #msgInput{border-bottom: 1px solid #b9b9b9;}
+                            #send{
+                                border: 0;
+                                font-size: 2.5vh;
+                                background-color: rgb(9, 0, 49);
+                            }
+                                #send i{
+                                    text-align: center;
+                                    color: whitesmoke;
+                                }
+
+                
+            #chatUsers{
+                width: 30%;
+                padding: 2vh;
+                box-sizing: border-box;
+            }
+                #everyUser{
+                    border: 1px solid #B9B9B9;
+                    color: #555;
+
+                    padding: 1vh;
+                    height: 65vh;
+
+                    box-sizing: border-box;
+                    
+                }
+
+@media screen and (max-aspect-ratio: 1/1) {
+
+    #bodyWeb{
+        width: 100%;
+        height: 93vh;
+        overflow: hidden;
+        margin-bottom: 0;
+    }
+        #chat-username, #customChatCont{
+            width: 90%;
+        }
+
+        #cont-chat{
+            width: 100%;
+            margin: 0;
+            box-shadow: 0 0 0 0 rgba(0,0,0, 0);
+        }
+            #chatsinfCont{
+                display: block;
+            }
+                #chatChat{
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 0;
+                }
+                            #output{
+                                height: 71vh;
+                                width: 100%;
+                            }
+                #chatUsers{
+                    display: none;
+                }
+}

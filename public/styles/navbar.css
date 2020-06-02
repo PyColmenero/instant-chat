@@ -1,0 +1,56 @@
+nav{
+    background-color: rgb(34, 34, 65);
+    color: whitesmoke;
+    display: flex;
+    height: 7vh;
+}
+    #hambChats{
+        display: none;
+    }
+    #hambChats:hover{
+        background-color: #313164;
+    }
+        #hambChats img{
+            height: 5vh;
+            padding: 1vh 0;
+            margin: 0 auto;
+            display: block;
+        }
+    #centerNav{
+        width: 100%;
+    }
+        #centerNav h1{
+            text-align: center;
+            font-size: 3.5vh;
+            height: 5vh;
+            padding: 1vh 0;
+        }
+    #hambUsersC{
+        display: none;
+    }
+    #hambUsersC:hover{
+        background-color: #313164;
+    }
+        #hambUsersC img{
+            height: 5vh;
+            padding: 1vh 0;
+            margin: 0 auto;
+            display: block;
+        }
+
+
+@media screen and (max-aspect-ratio: 1/1) {
+
+    #hambChats{
+        width: 20%;
+        display: block;
+    }
+    #centerNav{
+        width: 70%;
+    }
+    #hambUsersC{
+        width: 20%;
+        display: block;
+    }
+
+}
