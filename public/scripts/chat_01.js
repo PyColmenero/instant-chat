@@ -48,6 +48,8 @@ socket.on('newMessage', function(data){
         } else {
             output.append('<div class="otherMSG"><div><label>'+data.username+': </label>  <label>'+data.message+'</label></div></div>')
         }
+        var elem = document.getElementById('output');
+        elem.scrollTop = elem.scrollHeight;
     }
 })
 

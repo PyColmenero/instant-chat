@@ -11,7 +11,7 @@ const chatusername = $("#chat-username")
 const contchat = $("#cont-chat")
 const selectOne = $("#selectOne")
 
-var username = undefined
+
 
 // Click Enter username
 enterChat.click(function(){
@@ -31,6 +31,7 @@ function tryLogging(){
     if(username){
         if(username.length > 3 && username.length < 16){
             socket.emit('validateUsername', username)
+            localStorage.setItem("username", username)
         } else {
             validP1.text("More than 3 and less than 16 length")
         }

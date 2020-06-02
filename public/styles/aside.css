@@ -3,6 +3,7 @@ aside{
     background-color: rgb(238, 236, 236);
     height: 93vh;
     
+    
 
     box-sizing: border-box;
 }
@@ -82,7 +83,7 @@ aside{
             z-index: 1000;
             position: absolute;
             left: -100%;
-            transition: 1s;
+            transition: .2s;
             width: 70%;
         }
 }
