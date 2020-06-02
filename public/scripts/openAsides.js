@@ -20,7 +20,7 @@ black.click(function(){
 })
 
 function closeNav(){
-    if(boolAside1 && !proportion){
+    if(boolAside1 && !proportion || !realDevide){
         boolAside1 = false;
         aside.animate({ left: ("-100vw") }, "fast");
         black.animate({ opacity: "0" }, function(){
@@ -30,7 +30,7 @@ function closeNav(){
 }
 
 function openNav(){
-    if(!boolAside1 && !proportion){
+    if(!boolAside1 && !proportion || !realDevide){
         boolAside1 = true;
         black.css("display","block")
         aside.animate({ left: "0" }, "fast");

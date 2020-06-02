@@ -43,7 +43,7 @@ function getProportion(){
 
 function mobileChatMeasures(){
     console.log("ifgeuig")
-    if(!proportion){
+    if(!proportion || !realDevide){
 
         
 
@@ -62,4 +62,11 @@ function mobileChatMeasures(){
         outputa.css("height",  total)
     }
 
+}
+
+var realDevide;
+if(window.screen.width > window.screen.height){
+    realDevide = true;
+} else {
+    realDevide = false;
 }
