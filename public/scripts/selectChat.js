@@ -41,7 +41,7 @@ enterCustomChat.click(function(){
     output.html('')
 
     chatusername.css("display", "none")
-    contchat.css("display", "block")
+    bodyWeb.css("display", "block")
     customChatCont.css("display", "none")
     selectOne.css("display", "none")
     
