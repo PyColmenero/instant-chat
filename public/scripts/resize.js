@@ -36,24 +36,30 @@ function getProportion(){
             closeNav()
         } catch { }
     }
+    mobileChatMeasures()
 
 }
 
-mobileChatMeasures()
+
 function mobileChatMeasures(){
+    console.log("ifgeuig")
+    if(!proportion){
 
-    nav = $("nav")
-    weba = $("#web")
+        
 
-    weba.css("height", (window.innerHeight - nav.height()) )
+        nav = $("nav")
+        weba = $("#web")
 
-    outputa = $("#output")
-    infoChat =$("#infoChat")
-    currentUsernameDiv =$("#currentUsernameDiv")
-    barInputs = $("#barInputs")
+        weba.css("height", (window.innerHeight - nav.height()) )
 
-    webH = weba.height()
-    total = ( webH - (infoChat.height()+currentUsernameDiv.height()+barInputs.height()+20 ) )
-    outputa.css("height",  total)
+        outputa = $("#output")
+        infoChat =$("#infoChat")
+        currentUsernameDiv =$("#currentUsernameDiv")
+        barInputs = $("#barInputs")
+
+        webH = weba.height()
+        total = ( webH - (infoChat.height()+currentUsernameDiv.height()+barInputs.height()+20 ) )
+        outputa.css("height",  total)
+    }
 
 }

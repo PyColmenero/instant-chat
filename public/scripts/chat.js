@@ -38,6 +38,10 @@ msgInput.on('keypress', function(){
     //socket.emit('chatTyping', usernameInput.val())
 })
 
+msgInput.click(function(){
+    mobileChatMeasures()
+})
+
 //Get Message
 socket.on('newMessage', function(data){
     if(username && chat == data.chat){
