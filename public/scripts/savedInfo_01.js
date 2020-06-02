@@ -1,4 +1,5 @@
 var username = undefined
+const usernameInput   = $("#usernameInput")
 
 sUsername = localStorage.getItem("username")
 

@@ -1,5 +1,4 @@
 const enterChat = $("#enterChat")
-const usernameInput   = $("#usernameInput")
 const validP1 = $("#validP1")
 
 const currentUsernameP = $("#currentUsernameP")
