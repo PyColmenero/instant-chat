@@ -24,6 +24,7 @@ msgInput.on('keyup', function (e) {
     if (e.keyCode === 13) {
         sendMSG()
     }
+    $("#logo").text(e.keyCode)
 });
 
 function sendMSG(){
@@ -58,8 +59,10 @@ socket.on('newMessage', function(data){
             lastMsg = true;
             lastOtherMsg = false;
         }
+
         var elem = document.getElementById('output');
         elem.scrollTop = elem.scrollHeight;
+
 
         for(let e = 0; e < everyTypings.length; e++){
             try{
