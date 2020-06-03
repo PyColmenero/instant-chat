@@ -3,52 +3,55 @@
 }
 
     #chat-username, #customChatCont{
-        width: 50%;  
-        margin: 5vh auto; 
+        width: 100%;
     }
-        
-        #chat-username > div, #customChatCont > div{
-            border: 1px solid #181818;
-            padding: 2vh;
+        #loginContaaa{
+            width: 50%;
+            margin: 3rem auto;
+
+            box-sizing: border-box;
         }
-            #usernameInput, #customChatInput{
+            #loginContaaa > div, #customChatCont > div{
+                border: 1px solid #181818;
+                padding: 2vh;
+            }
+                #usernameInput, #customChatInput{
+                    padding: 1vh;
+                    border: 0;
+                    width: 100%;
+                    margin: 0 auto;
+
+                    background-color: #EEEDED;
+                    /* border-left: 1px solid #b9b9b9;
+                    border-right: 1px solid #b9b9b9; */
+
+                    display: block;
+                    box-sizing: border-box;
+                }
+                #valid1, #valid2{
+                    height: 3vh;
+                    padding: 0 .5vh;
+                }
+                    #validP1{
+                        padding: 1vh 0;
+                        color: darkred;
+                        font-size: 1.8vh;
+                        font-weight: 800;
+                    }
+            #enterChat, #enterCustomChat{
                 padding: 1vh;
                 border: 0;
                 width: 100%;
-                margin: 0 auto;
-
-                background-color: #EEEDED;
-                /* border-left: 1px solid #b9b9b9;
-                border-right: 1px solid #b9b9b9; */
-
-                display: block;
-                box-sizing: border-box;
+                border: 1px solid #181818;
+                border-top: 0;
             }
-            #valid1, #valid2{
-                height: 3vh;
-                padding: 0 .5vh;
-            }
-                #validP1{
-                    padding: 1vh 0;
-                    color: darkred;
-                    font-size: 1.8vh;
-                    font-weight: 800;
-                }
-        #enterChat, #enterCustomChat{
-            padding: 1vh;
-            border: 0;
-            width: 100%;
-            border: 1px solid #181818;
-            border-top: 0;
-        }
 
     
 @media screen and (max-device-aspect-ratio: 1/1) {
 
     #chat-username, #customChatCont{
-
-        width: 80%;
-
     }
-
-}
+        #loginContaaa{
+            width: 80%;
+        }
+}   
