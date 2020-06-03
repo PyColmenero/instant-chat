@@ -5,6 +5,8 @@ const typings = $("#typings")
 
 msgInput.on('keypress', function(){
     
+    $("#logo").text(msgInput.val())
+
     millisecondsNow = getCurrentMilliseconds()
 
     socket.emit('chatTyping', {usern: username, time: millisecondsNow, chat: chat})
@@ -53,10 +55,7 @@ socket.on('userTyping', function(data){
                 
             }
         } catch(e) {}
-        
-        //console.log(everyTypings[e].user)
     }
-    
     
     if(!isInItT){
         everyTypings[lengthT] = {user: userT, date: timeT, chat: data.chat}
