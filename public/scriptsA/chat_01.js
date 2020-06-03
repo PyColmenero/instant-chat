@@ -23,7 +23,7 @@ msgInput.click(function(){
     setTimeout(function(){
         elem = document.getElementById('output');
         elem.scrollTop = elem.scrollHeight;
-    },500)
+    },200)
 })
 send.click(function(){
     sendMSG()
