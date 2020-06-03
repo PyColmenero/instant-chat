@@ -38,7 +38,7 @@ msgInput.on('keyup', function (e) {
 
 function sendMSG(){
     msg = msgInput.val()
-    
+
     elem = document.getElementById('output');
     elem.scrollTop = elem.scrollHeight;
 
@@ -52,7 +52,9 @@ function sendMSG(){
     
 }
 
-
+output.click(function(){
+    msgInput.focus()
+})
 
 
 //Get Message
