@@ -59,7 +59,7 @@ function changeOutHeight(){
 
     $("body").height( bodyH )
 
-    output.append( outputH+' , '+summatori + " , " + window.innerWidth)
+    //output.append( outputH+' , '+summatori + " , " + window.innerWidth)
 
-    //output.height( outputH  )
+    output.height( outputH  )
 }
