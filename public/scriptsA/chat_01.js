@@ -44,17 +44,17 @@ function sendMSG(){
 
 //Get Message
 socket.on('newMessage', function(data){
-    if(username && chat == data.chat){
+    if(username && chat == data.msgCont.chat){
 
         classOwn = lastMsg ? "firstM" : ""
         classOther = lastOtherMsg ? "firstOM" : ""
 
-        if(data.username == username){
-            output.append('<div class="ownMSG"><div class="'+classOwn+'"> <p>'+data.message+'</p> </div></div>')
+        if(data.msgCont.username == username){
+            output.append('<div data-id="'+data.msgID+'" class="ownMSG noselect"><div data-users="" class="msg '+classOwn+'"> <p>'+data.msgCont.message+'</p> <div class="likeOwn" style="display: none;" >0</div> </div></div>')
             lastMsg = false;
             lastOtherMsg = true;
         } else {
-            output.append('<div class="otherMSG"><div class="'+classOther+'"><label><b>'+data.username+':</b> </label>  <label>'+data.message+'</label></div></div>')
+            output.append('<div data-id="'+data.msgID+'" class="otherMSG noselect"><div data-users="" class="msg '+classOther+'"><label><label><b>'+data.msgCont.username+':</b> </label>  <label>'+data.msgCont.message+'</label></label><div class="likeOther" style="display: none;" >0</div></div></div>')
             lastMsg = true;
             lastOtherMsg = false;
         }
@@ -65,7 +65,7 @@ socket.on('newMessage', function(data){
 
         for(let e = 0; e < everyTypings.length; e++){
             try{
-                if(everyTypings[e].user == data.username){
+                if(everyTypings[e].user == data.msgCont.username){
 
                     everyTypings[e] = undefined
                     
@@ -74,6 +74,7 @@ socket.on('newMessage', function(data){
     
         }
         proveTypings()
+        msg = $(".msg")
     }
 })
 

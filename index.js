@@ -33,6 +33,8 @@ const server = app.listen(app.get('port'), () => {
                     { chatName: 'Fiesta',       chatAmmount: 0 },
                     { chatName: 'Meeting',      chatAmmount: 0 },
                     { chatName: '18+',           chatAmmount: 0 }]
+
+    idMSG = 0;
     
 
     io.on('connection', (socket)=> {
@@ -111,7 +113,13 @@ const server = app.listen(app.get('port'), () => {
 
         //Send Message
             socket.on('chatMsg', (data) => {
-                io.sockets.emit('newMessage', data)
+                idMSG++;
+                io.sockets.emit('newMessage', {msgCont: data, msgID: idMSG})
+            })
+
+        //Send Like
+            socket.on('emitLike', (data) => {
+                io.sockets.emit('newLike', data)
             })
 
 

@@ -3,7 +3,7 @@
 }
 
     #chat-username, #customChatCont{
-        width: 100%;
+        width: 80%;
     }
         #loginContaaa{
             width: 50%;
@@ -50,6 +50,7 @@
 @media screen and (max-device-aspect-ratio: 1/1) {
 
     #chat-username, #customChatCont{
+        width: 100%;
     }
         #loginContaaa{
             width: 80%;
