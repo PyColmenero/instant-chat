@@ -59,7 +59,7 @@ socket.on('userTyping', function(data){
     
     
     if(!isInItT){
-        everyTypings[lengthT] = {user: userT, date: timeT}
+        everyTypings[lengthT] = {user: userT, date: timeT, chat: data.chat}
     } else {
         everyTypings[indexUser].date += 50
     }
@@ -82,7 +82,9 @@ function proveTypings(){
                 everyTypings[e] = undefined
                 console.log("up")
             } else {
-                everyUsersTypings[everyUsersTypings.length] = everyTypings[e].user
+                if(everyTypings[e].chat == chat)(
+                    everyUsersTypings[everyUsersTypings.length] = everyTypings[e].user
+                )
             }
         } catch(e) {}
 

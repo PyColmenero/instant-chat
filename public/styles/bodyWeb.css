@@ -27,7 +27,7 @@
                 overflow-y: scroll;
                 padding: 10px;
 
-                background-color: ivory;
+                background-color: rgb(250, 250, 250);
 
                 box-sizing: border-box;
             }
@@ -65,11 +65,11 @@
                         padding: .3rem .7rem;
                     }
                     .firstM{
-                        border-radius: 10px 0 10px 10px ;
+                        border-radius: 10px 0 10px 10px !important;
                         margin-top: .8rem;
                     }
                     .firstOM{
-                        border-radius: 0 10px  10px 10px;
+                        border-radius: 0 10px 10px 10px !important;
                         margin-top: .8rem;
                     }
 

@@ -60,6 +60,18 @@ socket.on('newMessage', function(data){
         }
         var elem = document.getElementById('output');
         elem.scrollTop = elem.scrollHeight;
+
+        for(let e = 0; e < everyTypings.length; e++){
+            try{
+                if(everyTypings[e].user == data.username){
+
+                    everyTypings[e] = undefined
+                    
+                }
+            } catch(e) {}
+    
+        }
+        proveTypings()
     }
 })
 
