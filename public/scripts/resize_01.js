@@ -51,10 +51,9 @@ function changeOutHeight(){
 
     navH =      $("nav").outerHeight()
     infoH =     $("#info").outerHeight()
-    inputsH =    $("#inputs").outerHeight()
-    typingsH =    $("#typings").outerHeight()
+    bottomDivH =    $("#bottomDivH").outerHeight()
 
-    summatori = ((navH + infoH + inputsH + typingsH) + 20)
+    summatori = ((navH + infoH + bottomDivH) + 20)
 
     outputH = (bodyH - summatori)
 
