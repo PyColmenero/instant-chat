@@ -24,7 +24,6 @@ msgInput.on('keyup', function (e) {
     if (e.keyCode === 13) {
         sendMSG()
     }
-    $("#logo").text(e.keyCode)
 });
 
 function sendMSG(){

@@ -9,7 +9,9 @@ const typings = $("#typings")
 // })
 
 msgInput.on('keyup', function () {
-    emitTypings()
+    if (e.keyCode != 13) {
+        emitTypings()
+    }
 });
 
 function emitTypings(){
