@@ -3,14 +3,22 @@ everyTypings = []
 
 const typings = $("#typings")
 
-msgInput.on('keypress', function(){
+// msgInput.on('keypress', function(){
     
+    
+// })
+
+msgInput.on('keyup', function () {
+    emitTypings()
+});
+
+function emitTypings(){
     $("#logo").text(msgInput.val())
 
     millisecondsNow = getCurrentMilliseconds()
 
     socket.emit('chatTyping', {usern: username, time: millisecondsNow, chat: chat})
-})
+}
 
 function getCurrentMilliseconds(){
     var nowDateTyping = new Date();
