@@ -14,6 +14,7 @@ typings = []
 var chat = undefined
 
 var lastMsg = true;
+var lastOtherMsg = true;
 
 send.click(function(){
     sendMSG()
@@ -46,13 +47,16 @@ socket.on('newMessage', function(data){
     if(username && chat == data.chat){
 
         classOwn = lastMsg ? "firstM" : ""
+        classOther = lastOtherMsg ? "firstOM" : ""
 
         if(data.username == username){
             output.append('<div class="ownMSG"><div class="'+classOwn+'"> <p>'+data.message+'</p> </div></div>')
             lastMsg = false;
+            lastOtherMsg = true;
         } else {
-            output.append('<div class="otherMSG"><div><label>'+data.username+': </label>  <label>'+data.message+'</label></div></div>')
+            output.append('<div class="otherMSG"><div class="'+classOther+'"><label>'+data.username+': </label>  <label>'+data.message+'</label></div></div>')
             lastMsg = true;
+            lastOtherMsg = false;
         }
         var elem = document.getElementById('output');
         elem.scrollTop = elem.scrollHeight;

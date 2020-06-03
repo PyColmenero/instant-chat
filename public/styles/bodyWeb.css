@@ -50,6 +50,7 @@
                         background-color: #ebebeb;
                         color: rgb(32, 32, 32);
 
+                        max-width: 80%;
                         border-radius: 10px;
                         padding: .3rem .7rem;
 
@@ -59,11 +60,16 @@
                         background-color: #ebebeb;
                         color: rgb(32, 32, 32);
 
+                        max-width: 80%;
                         border-radius: 10px;
                         padding: .3rem .7rem;
                     }
                     .firstM{
-                        border-radius: 10px 0 10px 10px !important;
+                        border-radius: 10px 0 10px 10px ;
+                        margin-top: .8rem;
+                    }
+                    .firstOM{
+                        border-radius: 0 10px  10px 10px;
                         margin-top: .8rem;
                     }
 
@@ -80,7 +86,8 @@
             overflow: hidden;
             text-overflow: ellipsis;
             height: 1.5rem;
-            color: darkred;
+            color: rgb(0, 1, 59);
+            background-color: rgb(255, 196, 196);
         }
         #inputs{
             display: flex;
