@@ -33,6 +33,7 @@ const server = app.listen(app.get('port'), () => {
                     { chatName: 'Fiesta',       chatAmmount: 0 },
                     { chatName: 'Meeting',      chatAmmount: 0 },
                     { chatName: '18',          chatAmmount: 0 }]
+    
 
     io.on('connection', (socket)=> {
         idConnected.push(socket.id)
@@ -139,7 +140,7 @@ const server = app.listen(app.get('port'), () => {
                         everyChat[e].chatAmmount--;
                     }
                 }
-                idConnected.splice (idConnected.indexOf(socket.id), 1);
+                idConnected.splice(idConnected.indexOf(socket.id), 1);
                 if(index != -1){
                     usersConnected.splice ( (index), 1);
 

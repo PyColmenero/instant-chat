@@ -20,6 +20,12 @@ chatSelect.click(function(){
 
         chatP.text(chat)
 
+        chatSelect.attr("class", "chatSelect")
+        $(this).attr("class", "chatSelect selectedC")
+
+        msgInput.focus()
+
+        changeOutHeight()
         closeNav()
     }
 
@@ -32,6 +38,7 @@ customChat.click(function(){
         bodyWeb.css("display", "none")
         selectOne.css("display", "none")
 
+        changeOutHeight()
         closeNav()
     }
 })
@@ -48,8 +55,9 @@ enterCustomChat.click(function(){
     chat = customChatInput.val()
     
     socket.emit('changeChat', {usern: username, chat: chat})
-
+    
     chatP.text(chat)
 
+    changeOutHeight()
 
 })

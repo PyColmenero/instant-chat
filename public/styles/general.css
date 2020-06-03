@@ -20,8 +20,7 @@ body{
 
 .resaltedP{
     padding: 1vh 0 1vh 1vh;
-    font-size: 2vh;
-    height: 3vh;
+    font-size: 1.2rem;
     background-color: #181818;
     color: #FD6E6E;
 }

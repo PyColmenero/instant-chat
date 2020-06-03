@@ -34,9 +34,10 @@ aside{
         padding: 1vh;
         height: 86vh;
         overflow-y: scroll;
+        overflow-x: hidden;
     }
         #everyChat ul{
-            list-style-type: none;
+            list-style: square;
             padding-top: 1vh;
         }
             #everyChat li{
@@ -49,6 +50,10 @@ aside{
             }   
                 .chatSelect{
                     display: inline;
+                    padding: .5vh 0;
+                }
+                .selectedC{
+                    text-decoration: underline;
                 }
                 #everyChat label{
                     
@@ -58,6 +63,7 @@ aside{
         padding: 1vh;
         height: 86vh;
         overflow-y: scroll;
+        overflow-x: hidden;
     }
         #everyUsersMovile > div{
             padding-left: 1vh;

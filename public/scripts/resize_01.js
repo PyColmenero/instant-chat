@@ -19,6 +19,16 @@ function getProportion(){
     widthWindow = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     heightWindow = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
+
+    //Real Proportiion
+    if(window.screen.width > window.screen.height){
+        try{closeNav()} catch(e) {}
+        realDevide = true;
+    } else {
+        realDevide = false;
+    }
+
+
     //Current Proportion
     proportion = false;
     if(widthWindow >= heightWindow){
@@ -26,20 +36,12 @@ function getProportion(){
 
     } else {
         
-        try{
-            closeNav()
-        } catch { }
         
     }
 
     changeOutHeight()
 
-    //Real Proportiion
-    if(window.screen.width > window.screen.height){
-        realDevide = true;
-    } else {
-        realDevide = false;
-    }
+    
 
 }
 
@@ -49,9 +51,10 @@ function changeOutHeight(){
 
     navH =      $("nav").outerHeight()
     infoH =     $("#info").outerHeight()
-    inputs =    $("#inputs").outerHeight()
+    inputsH =    $("#inputs").outerHeight()
+    typingsH =    $("#typings").outerHeight()
 
-    summatori = ((navH + infoH + inputs) + 20)
+    summatori = ((navH + infoH + inputsH + typingsH) + 20)
 
     outputH = (bodyH - summatori)
 

@@ -13,7 +13,9 @@ const selectOne = $("#selectOne")
 
 
 // Click Enter username
-enterChat.click(function(){
+enterChat.click(function(e){
+
+    e.preventDefault()
 
     tryLogging()
 
