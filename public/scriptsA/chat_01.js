@@ -20,8 +20,10 @@ var lastOtherMsg = true;
 
 
 msgInput.click(function(){
-    elem = document.getElementById('output');
-    elem.scrollTop = elem.scrollHeight;
+    setTimeout(function(){
+        elem = document.getElementById('output');
+        elem.scrollTop = elem.scrollHeight;
+    },500)
 })
 send.click(function(){
     sendMSG()
@@ -37,6 +39,9 @@ msgInput.on('keyup', function (e) {
 function sendMSG(){
     msg = msgInput.val()
     
+    elem = document.getElementById('output');
+    elem.scrollTop = elem.scrollHeight;
+
     if(msg && msg.length >= 1){
         socket.emit('chatMsg', {    username: username,
                                     message: msg,
