@@ -57,7 +57,7 @@ function changeOutHeight(){
 
     outputH = (bodyH - summatori)
 
-    $("#all").height( bodyH )
+    $("#all").height( bodyH -10 )
     $("#all").css("background","red")
     $("#all").css("border","5px solid darkred")
 
