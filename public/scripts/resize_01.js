@@ -53,11 +53,13 @@ function changeOutHeight(){
     infoH =     $("#info").outerHeight()
     bottomDivH =    $("#bottomDiv").outerHeight()
 
-    summatori = ((navH + infoH + bottomDivH) + 30)
+    summatori = ((navH + infoH + bottomDivH) + 20)
 
     outputH = (bodyH - summatori)
 
     $("#all").height( bodyH )
+    var allS = document.getElementById('all');
+    allS.scrollTop = 0;
 
 
     //output.append( outputH+' , '+summatori + " , " + window.innerWidth)
