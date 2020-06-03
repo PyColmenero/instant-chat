@@ -34,9 +34,11 @@ msgInput.on('keyup', function (e) {
     if (e.keyCode === 13) {
         sendMSG()
     }
+    msgInput.focus()
 });
 
 function sendMSG(){
+    msgInput.focus()
     msg = msgInput.val()
 
     elem = document.getElementById('output');
