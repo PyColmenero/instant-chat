@@ -33,8 +33,8 @@ aside{
     #everyChat{
         padding: 1vh;
         height: 86vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        /* overflow-y: scroll;
+        overflow-x: hidden; */
     }
         #everyChat ul{
             list-style: square;
@@ -62,8 +62,8 @@ aside{
     #everyUsersMovile{
         padding: 1vh;
         height: 86vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        /* overflow-y: scroll;
+        overflow-x: hidden; */
     }
         #everyUsersMovile > div{
             padding-left: 1vh;

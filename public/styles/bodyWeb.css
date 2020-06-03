@@ -81,9 +81,11 @@
                     }
         #typings{
             padding: 1vh 2vh;
+
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            
             height: 1.5rem;
             color: rgb(0, 1, 59);
             background-color: rgb(255, 196, 196);
