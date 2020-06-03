@@ -61,5 +61,5 @@ function changeOutHeight(){
 
     //output.append( outputH+' , '+summatori + " , " + window.innerWidth)
 
-    output.height( outputH  )
+    //output.height( outputH  )
 }
