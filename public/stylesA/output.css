@@ -42,23 +42,35 @@
             border-radius: 0 10px 10px 10px !important;
             margin-top: .8rem;
         }
-            .likeOwn, .likeOther{
+            .otherLikeOwn, .otherLikeOther, .myLikeOwn, .myLikeOther{
                 position: absolute;
                 border-radius: 50%;
-                background-color: rgb(255, 131, 131);
+                background-color: rgb(253, 147, 147);
                 z-index: 9;
                 font-size: .7rem;
                 height: 1rem;
                 width: 1rem;
                 text-align: center;
             }
-            .likeOwn{
-                bottom: -0.3rem;
+            .otherLikeOwn{
+                bottom: -0.4rem;
                 left: -0.3rem;
             }
-            .likeOther{
-                bottom: -0.3rem;
+            .otherLikeOther{
+                bottom: -0.4rem;
                 right: -0.3rem;
+            }
+
+
+            .myLikeOwn{
+                background-color: rgb(32, 32, 32) !important;
+                left: -0.3rem;
+                top: -0.3rem;
+            }
+            .myLikeOther{
+                background-color: rgb(32, 32, 32) !important;
+                right: -0.3rem;
+                top: -0.3rem;
             }
         .adMsg p{
             padding: .5rem;

@@ -16,9 +16,17 @@ var chat = undefined
 var lastMsg = true;
 var lastOtherMsg = true;
 
+
+
+
+msgInput.click(function(){
+    elem = document.getElementById('output');
+    elem.scrollTop = elem.scrollHeight;
+})
 send.click(function(){
     sendMSG()
 })
+
 
 msgInput.on('keyup', function (e) {
     if (e.keyCode === 13) {
@@ -50,16 +58,16 @@ socket.on('newMessage', function(data){
         classOther = lastOtherMsg ? "firstOM" : ""
 
         if(data.msgCont.username == username){
-            output.append('<div data-id="'+data.msgID+'" class="ownMSG noselect"><div data-users="" class="msg '+classOwn+'"> <p>'+data.msgCont.message+'</p> <div class="likeOwn" style="display: none;" >0</div> </div></div>')
+            output.append('<div data-id="'+data.msgID+'" class="ownMSG noselect"><div data-users="" class="msg '+classOwn+'"> <p>'+data.msgCont.message+'</p> <div class="otherLikeOwn" style="display: none;" >0</div><div class="myLikeOwn" data-status="no" style="display: none;" >0</div> </div></div>')
             lastMsg = false;
             lastOtherMsg = true;
         } else {
-            output.append('<div data-id="'+data.msgID+'" class="otherMSG noselect"><div data-users="" class="msg '+classOther+'"><label><label><b>'+data.msgCont.username+':</b> </label>  <label>'+data.msgCont.message+'</label></label><div class="likeOther" style="display: none;" >0</div></div></div>')
+            output.append('<div data-id="'+data.msgID+'" class="otherMSG noselect"><div data-users="" class="msg '+classOther+'"><label><label><b>'+data.msgCont.username+':</b> </label>  <label>'+data.msgCont.message+'</label></label><div class="otherLikeOther" style="display: none;" >0</div><div class="myLikeOther" data-status="no" style="display: none;" ></div></div></div>')
             lastMsg = true;
             lastOtherMsg = false;
         }
 
-        var elem = document.getElementById('output');
+        elem = document.getElementById('output');
         elem.scrollTop = elem.scrollHeight;
 
 
