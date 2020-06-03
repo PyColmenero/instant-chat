@@ -2,7 +2,6 @@ nav{
     background-image: linear-gradient(45deg, #1f1f38, #474772);
     color: whitesmoke;
     display: flex;
-    height: 7vh;
 }
     #hambChats{
         width: 15%;
@@ -11,20 +10,22 @@ nav{
         background-color: #313164;
     }
         #hambChats img{
-            height: 5vh;
-            padding: 1vh 0;
+            width: 50%;
+            padding: .5rem 0;
             margin: 0 auto;
             display: none;
             filter: invert(100%);
         }
     #centerNav{
         width: 70%;
+        display: flex;
+        align-items: center;
     }
         #centerNav h1{
             text-align: center;
-            font-size: 3.5vh;
-            height: 5vh;
-            padding: 1vh 0;
+            font-size: 1rem;
+            display: block;
+            width: 100%;
         }
     #hambUsersC{
         width: 15%;
@@ -33,8 +34,6 @@ nav{
         background-color: #313164;
     }
         #hambUsersC img{
-            height: 5vh;
-            padding: 1vh 0;
             margin: 0 auto;
             display: block;
         }
