@@ -13,7 +13,7 @@ msgInput.on('keyup', function () {
 });
 
 function emitTypings(){
-    $("#logo").text(msgInput.val())
+    //$("#logo").text(msgInput.val())
 
     millisecondsNow = getCurrentMilliseconds()
 
