@@ -12,8 +12,7 @@ aside{
     }
         #chatsButton, #usersButton{
             width: 50%;
-            padding: 1vh;
-            height: 5vh;
+            padding: .5rem;
 
             background-color: lightgray;
             color: rgb(122, 0, 0);
@@ -21,7 +20,7 @@ aside{
 
             text-align: center;
             font-weight: 700;
-            font-size: 2vh;
+            font-size: 1rem;
 
             box-sizing: border-box;
         }
@@ -31,17 +30,17 @@ aside{
         
 
     #everyChat{
-        padding: 1vh;
-        height: 86vh;
+        padding: .5rem;
+        height: 80vh;
         /* overflow-y: scroll;
         overflow-x: hidden; */
     }
         #everyChat ul{
             list-style: square;
-            padding-top: 1vh;
+            padding-top: .5rem;
         }
             #everyChat li{
-                padding-left: 2vh;     
+                padding-left: 1rem;     
                 display: flex;
                 justify-content: space-between;  
             }
@@ -49,35 +48,38 @@ aside{
                 background-color: #d8d8d8;
             }   
                 .chatSelect{
-                    display: inline;
-                    padding: .5vh 0;
+                    background-color: rgb(226, 226, 226);
+
+                    padding: .2rem 0;
+                    margin-bottom: .3rem;
                 }
                 .selectedC{
                     text-decoration: underline;
                 }
                 #everyChat label{
                     
-                   padding: 0 1vh;
+                   padding: 0 .5rem;
                 }
     #everyUsersMovile{
-        padding: 1vh;
-        height: 86vh;
+        padding: .5rem;
+        height: 80vh;
         /* overflow-y: scroll;
         overflow-x: hidden; */
     }
         #everyUsersMovile > div{
-            padding-left: 1vh;
+            padding-left: .5rem;
             color: rgb(124, 74, 74);
         }
 
 
 #black{
     width: 100vw;
-    height: 93vh;
+    height: 95vh;
     background-color: black;
     position: fixed;
     opacity: 0;
     z-index: 999;
+    overflow: hidden;
     display: none;
 }
 

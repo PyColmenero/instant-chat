@@ -73,14 +73,14 @@
                     }
 
                     .adMsg p{
-                        padding: .2vh;
+                        padding: .5rem;
                         padding-bottom: 0;
                         color: rgb(160, 0, 0);
                         text-align: center;
                         background-color: rgb(255, 228, 228);
                     }
         #typings{
-            padding: 1vh 2vh;
+            padding: .5rem 1rem;
 
             white-space: nowrap;
             overflow: hidden;
@@ -94,21 +94,21 @@
             display: flex;
         }
             #divInputMsg{
-                width: 90%;
+                width: 85%;
                 display: flex;
             }
                 #msgInput{
                     display: block;
                 }
             #divButtonMsg{
-                width: 10%;
+                width: 15%;
             }
                 #msgInput, #send{
-                    padding: 1vh;
+                    padding: .5rem;
                     border-radius: 0;
                     border: 0;
                     width: 100%;
-                    font-size: 2vh;
+                    font-size: 1rem;
 
                     background-color: #EEEDED;
 

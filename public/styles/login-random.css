@@ -13,10 +13,10 @@
         }
             #loginContaaa > div, #customChatCont > div{
                 border: 1px solid #181818;
-                padding: 2vh;
+                padding: 1rem;
             }
                 #usernameInput, #customChatInput{
-                    padding: 1vh;
+                    padding: .5rem;
                     border: 0;
                     width: 100%;
                     margin: 0 auto;
@@ -29,17 +29,17 @@
                     box-sizing: border-box;
                 }
                 #valid1, #valid2{
-                    height: 3vh;
-                    padding: 0 .5vh;
+                    height: 1.2rem;
+                    padding: 0 .25rem;
                 }
                     #validP1{
-                        padding: 1vh 0;
+                        padding: .5rem 0;
                         color: darkred;
-                        font-size: 1.8vh;
+                        font-size: 1rem;
                         font-weight: 800;
                     }
             #enterChat, #enterCustomChat{
-                padding: 1vh;
+                padding: .5rem;
                 border: 0;
                 width: 100%;
                 border: 1px solid #181818;
