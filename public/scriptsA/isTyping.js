@@ -8,7 +8,7 @@ const typings = $("#typings")
     
 // })
 
-msgInput.on('keyup', function () {
+msgInput.on('keyup', function (e) {
     if (e.keyCode != 13) {
         emitTypings()
     }
