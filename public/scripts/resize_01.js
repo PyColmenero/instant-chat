@@ -63,21 +63,3 @@ function changeOutHeight(){
 
     output.height( outputH  )
 }
-
-// function mobileChatMeasures(){
-//     console.log("ifgeuig")
-//     console.log("1")
-
-//     outputt = $("#output")
-//     infoChat =$("#infoChat")
-//     currentUsernameDiv =$("#currentUsernameDiv")
-//     barInputs = $("#barInputs")
-
-//     webH = weba.height()
-//     total = ( webH - (infoChat.height()+currentUsernameDiv.height()+barInputs.height()+20 ) )
-//     outputt.css("height",  total)
-    
-
-// }
-
-
