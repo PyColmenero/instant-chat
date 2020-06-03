@@ -78,6 +78,8 @@ setInterval(proveTypings,500)
 
 function proveTypings(){
 
+    changeOutHeight()
+
     millisecondsNow = getCurrentMilliseconds()
     
     everyUsersTypings = []
@@ -85,9 +87,11 @@ function proveTypings(){
     
     for(let e = 0; e < everyTypings.length; e++){
         try{
-            if(everyTypings[e].date+1500 <= millisecondsNow){
+            if(everyTypings[e].date+2500 <= millisecondsNow){
                 everyTypings[e] = undefined
                 console.log("up")
+                console.log(everyTypings[e].date+2500)
+                console.log(millisecondsNow)
             } else {
                 if(everyTypings[e].chat == chat)(
                     everyUsersTypings[everyUsersTypings.length] = everyTypings[e].user
