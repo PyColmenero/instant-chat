@@ -54,7 +54,7 @@ socket.on('newMessage', function(data){
             lastMsg = false;
             lastOtherMsg = true;
         } else {
-            output.append('<div class="otherMSG"><div class="'+classOther+'"><label>'+data.username+': </label>  <label>'+data.message+'</label></div></div>')
+            output.append('<div class="otherMSG"><div class="'+classOther+'"><label><b>'+data.username+':</b> </label>  <label>'+data.message+'</label></div></div>')
             lastMsg = true;
             lastOtherMsg = false;
         }
