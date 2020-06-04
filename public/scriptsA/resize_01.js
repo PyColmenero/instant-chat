@@ -1,8 +1,10 @@
 var proportion = undefined;
 var realDevide;
 
-const output = $("#output")
+var chatAppend = $(".chatAppend")
+var appendOutput = $("#opSevilla");
 
+var chat = undefined
 
 window.addEventListener("resize", function(event){
     
@@ -19,7 +21,6 @@ function getProportion(){
     widthWindow = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     heightWindow = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-
     //Real Proportiion
     if(window.screen.width > window.screen.height){
         try{closeNav()} catch(e) {}
@@ -28,24 +29,20 @@ function getProportion(){
         realDevide = false;
     }
 
-
     //Current Proportion
     proportion = false;
     if(widthWindow >= heightWindow){
         proportion = true;
 
-    } else {
-        
-        
     }
 
     changeOutHeight()
 
-    
-
 }
 
 function changeOutHeight(){
+
+    chatAppend = $(".chatAppend")
 
     bodyH =     window.innerHeight
 
@@ -63,6 +60,8 @@ function changeOutHeight(){
 
 
     //output.append( outputH+' , '+summatori + " , " + window.innerWidth)
-
-    output.height( outputH  )
+    if(chat){
+        appendOutput = $("#op"+chat)
+        appendOutput.height( outputH  )
+    }
 }

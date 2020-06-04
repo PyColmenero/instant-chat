@@ -5,13 +5,13 @@
     #chat-username, #customChatCont{
         width: 80%;
     }
-        #loginContaaa{
+        #loginCont, #customCont{
             width: 50%;
             margin: 3rem auto;
 
             box-sizing: border-box;
         }
-            #loginContaaa > div, #customChatCont > div{
+            #loginCont > div, #customCont > div{
                 border: 1px solid #181818;
                 padding: 1rem;
             }

@@ -32,7 +32,7 @@ const server = app.listen(app.get('port'), () => {
                     { chatName: 'Astronomia',   chatAmmount: 0 },
                     { chatName: 'Fiesta',       chatAmmount: 0 },
                     { chatName: 'Meeting',      chatAmmount: 0 },
-                    { chatName: '18+',           chatAmmount: 0 }]
+                    { chatName: '18',           chatAmmount: 0 }]
 
     idMSG = 0;
     
@@ -100,7 +100,7 @@ const server = app.listen(app.get('port'), () => {
                     }
                 }
                 //console.log(beforeChat);
-                //console.log(usersConnected)
+                console.log(everyChat)
                 io.sockets.emit('newConnected', {   usern: data.usern, 
                                                     con: "connected", 
                                                     chat: currenChat,
@@ -127,6 +127,7 @@ const server = app.listen(app.get('port'), () => {
                     }
                 }
                 if(realID){
+                    console.log("-")
                     io.sockets.connected[realID].emit('loadEveryUsers', usersConnected)
                 }
                 

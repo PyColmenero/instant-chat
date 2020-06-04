@@ -4,6 +4,7 @@ ammountP = $("#ammountP")
 
 // Users Connected MANAGER
 socket.on('newConnected', function(data){
+    appendOutput = $("#op"+chat)
 
     if(username){
         totalUsers = 0;
@@ -15,17 +16,17 @@ socket.on('newConnected', function(data){
                     everyConnectes+='<div data-id='+data.everyUsers[e].usern+'> '+data.everyUsers[e].usern+' </div>';
                     totalUsers++;
                     if(data.everyUsers[e].chat != data.beforeChat && data.usern == data.everyUsers[e].usern){
-                        output.append('<div class="adMsg"><div> <p>'+data.everyUsers[e].usern+' connected...</p> </div></div>')
+                        appendOutput.append('<div class="adMsg"><div> <p>'+data.everyUsers[e].usern+' connected...</p> </div></div>')
                         boolCon = false;
                     }
                 }
                 if(data.everyUsers[e].chat != data.beforeChat && boolCon && chat == data.beforeChat){
-                    output.append('<div class="adMsg"><div> <p>'+data.everyUsers[e].usern+' disconnected...</p> </div></div>')
+                    appendOutput.append('<div class="adMsg"><div> <p>'+data.everyUsers[e].usern+' disconnected...</p> </div></div>')
                 }
             }
         }
         if(data.totalDisconnect && data.chat == chat){
-            output.append('<div class="adMsg"><div> <p>'+data.usern+' disconnected...</p> </div></div>')
+            appendOutput.append('<div class="adMsg"><div> <p>'+data.usern+' disconnected...</p> </div></div>')
         }
 
         if(totalUsers == 0){
@@ -33,6 +34,7 @@ socket.on('newConnected', function(data){
             ammountP.text("")
         } else {
             ammountP.text(totalUsers)
+            getUsers()
         }
 
 

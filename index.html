@@ -61,7 +61,7 @@
                             <div class="noselect" id="usersButton">USERS</div>
                         </div>
                         <div id="everyChat">
-                            <ul>
+                            <ul id="appendChats">
                                 <li class="chatSelect"> <p class="noselect">Sevilla</p><label id="SevillaC">   </label></li>
                                 <li class="chatSelect"> <p class="noselect">Malaga</p><label id="MalagaC">    </label></li>
                                 <li class="chatSelect"> <p class="noselect">Estudios</p><label id="EstudiosC">  </label></li>
@@ -69,10 +69,11 @@
                                 <li class="chatSelect"> <p class="noselect">Astronomia</p><label id="AstronomiaC"></label></li>
                                 <li class="chatSelect"> <p class="noselect">Fiesta</p><label id="FiestaC">    </label></li>
                                 <li class="chatSelect"> <p class="noselect">Meeting</p><label id="MeetingC">   </label></li>
-                                <li class="chatSelect"> <p class="noselect">18+</p><label id="18+C">       </label></li>
+                                <li class="chatSelect"> <p class="noselect">18</p><label id="18C">       </label></li>
                                 <br>
-                                <li class="noselect" id="customChat">CUSTOM</li>
                             </ul>
+                            <br>
+                            <li class="noselect" id="customChat">CUSTOM</li>
                         </div>
                         <div id="everyUsersMovile" style="display: none;">
             
@@ -81,7 +82,7 @@
                     </aside>
 
                     <div id="chat-username">
-                        <div id="loginContaaa">
+                        <div id="loginCont">
                             <p class="resaltedP">Set Username:</p>
                             <div>
                                 <input id="usernameInput" type="text" placeholder="Username">
@@ -94,14 +95,16 @@
                     </div>
 
                     <div id="customChatCont" style="display: none;">
-                        <p class="resaltedP">Set Custom Chat:</p>
-                        <div>
-                            <input id="customChatInput" type="text" placeholder="Chat name...">
-                            <div id="valid2">
-                                <p id="validP2">...</p>
+                        <div id="customCont">
+                            <p class="resaltedP">Set Custom Chat:</p>
+                            <div>
+                                <input id="customChatInput" type="text" placeholder="Chat name...">
+                                <div id="valid2">
+                                    <p id="validP2">...</p>
+                                </div>
                             </div>
+                            <button id="enterCustomChat">Submit</button>
                         </div>
-                        <button id="enterCustomChat">Submit</button>
                     </div>
 
                     <div id="selectOne" style="display: none;">
@@ -119,7 +122,16 @@
                                 <p id="online">...</p>
                             </div>
 
-                            <div id="output"></div>
+                            <div id="output">
+                                <div id="opSevilla"     class="chatAppend" style="display:none;"></div>
+                                <div id="opMalaga"      class="chatAppend" style="display:none;"></div>
+                                <div id="opEstudios"    class="chatAppend" style="display:none;"></div>
+                                <div id="opPareja"      class="chatAppend" style="display:none;"></div>
+                                <div id="opAstronomia"  class="chatAppend" style="display:none;"></div>
+                                <div id="opFiesta"      class="chatAppend" style="display:none;"></div>
+                                <div id="opMeeting"     class="chatAppend" style="display:none;"></div>
+                                <div id="op18"          class="chatAppend" style="display:none;"></div>
+                            </div>
 
                             <div id="bottomDiv">
                                 <div id="seen"></div>
@@ -143,7 +155,7 @@
 
             <script src="./socket.io/socket.io.js"></script>
             
-            <script src="./public/scriptsA/savedInfo_01.js"></script>
+            <script src="./public/scriptsA/loadData.js"></script>
             <script src="./public/scriptsA/resize_01.js"></script>
             <script src="./public/scriptsA/openAsides_01.js"></script>
             
