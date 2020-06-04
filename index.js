@@ -39,7 +39,7 @@ const server = app.listen(app.get('port'), () => {
 
     io.on('connection', (socket)=> {
         idConnected.push(socket.id)
-        console.log("New connection: " + idConnected)
+        //console.log("New connection: " + idConnected)
         
         // Validate if Usrname is Takken
             socket.on('validateUsername', (username) => {
@@ -60,7 +60,7 @@ const server = app.listen(app.get('port'), () => {
                                                         chat: '',
                                                         everyUsers: usersConnected,
                                                         everyChat: everyChat})
-                    console.log(usersConnected)
+                    //console.log(usersConnected)
                 } 
 
                 data = isInIt ? "User is Taken" : "ok";
@@ -99,8 +99,8 @@ const server = app.listen(app.get('port'), () => {
                         break;
                     }
                 }
-                console.log(beforeChat);
-                console.log(usersConnected)
+                //console.log(beforeChat);
+                //console.log(usersConnected)
                 io.sockets.emit('newConnected', {   usern: data.usern, 
                                                     con: "connected", 
                                                     chat: currenChat,
@@ -146,7 +146,7 @@ const server = app.listen(app.get('port'), () => {
                         }
                     }
                     socket.broadcast.emit('userFocused')
-                    console.log(usersConnected)
+                    //console.log(usersConnected)
                 })
             //User Offline
                 socket.on('offlineUser', (data) => {
@@ -157,7 +157,7 @@ const server = app.listen(app.get('port'), () => {
                         }
                     }
                     socket.broadcast.emit('userDesFocused')
-                    console.log(usersConnected)
+                    //console.log(usersConnected)
                 })
 
 
@@ -197,7 +197,7 @@ const server = app.listen(app.get('port'), () => {
                                                         totalDisconnect: true})
                 }
 
-                console.log(usersConnected);
+                //console.log(usersConnected);
                 //console.log('Disconnected: ' + idConnected);
             });
     })
