@@ -1,4 +1,5 @@
-everyUsersOnMyChatAndOnline = []
+usersOnlineInChat = []
+seenUSersInChat = []
 
 
 $(window).on('focus', function () {
@@ -30,41 +31,80 @@ function makeMeOffline(){
 
 
 function getUsers(){
-    if(chat){
-        socket.emit('everyUsers', username)
-    }
+    socket.emit('everyUsers', username)
 }
 
 socket.on('loadEveryUsers', (data) => {
-    
-    getEveryUsersOnMyChatAndOnline(data)
-    
-
+    getOlineUsers(data)
 })
 
 
-function getEveryUsersOnMyChatAndOnline(data){
-    console.log(data)
-
-    currentSTR = ''
-    everyUsersOnMyChatAndOnline = []
+function getOlineUsers(data){
+    onlineSTR = ''
+    usersOnlineInChat = []
 
     for( let e = 0; e < data.length; e++){
         if(data[e].chat == chat){
             if(data[e].line){
                 if(data[e].usern != username){
-                    everyUsersOnMyChatAndOnline[everyUsersOnMyChatAndOnline.length] = data[e].usern
+                    usersOnlineInChat[usersOnlineInChat.length] = data[e].usern
                 }
             }
         }
     }
-    for( let e = 0; e < everyUsersOnMyChatAndOnline.length; e++){
-        if(e == everyUsersOnMyChatAndOnline.length-1){
-            currentSTR+= everyUsersOnMyChatAndOnline[e]
+    for( let e = 0; e < usersOnlineInChat.length; e++){
+        if(e == usersOnlineInChat.length-1){
+            onlineSTR+= usersOnlineInChat[e]
         } else {
-            currentSTR+= everyUsersOnMyChatAndOnline[e] +', '
+            onlineSTR+= usersOnlineInChat[e] +', '
         }
     }
 
-    seen.text(currentSTR)
+    online.text(onlineSTR)
+
+    if(totalLastMSG){
+        getSeenUsers()
+    }
+}
+
+function getSeenUsers(){
+    seenSTR = ''
+
+    index = 0;
+
+    isiNArr = false;
+
+    for( let e = 0; e < usersOnlineInChat.length; e++){
+        for( let a = 0; a < seenUSersInChat.length; a++){
+            if(seenUSersInChat[a] == usersOnlineInChat[e]){
+                isiNArr = true
+                break;
+            }
+            console.log(isiNArr)
+        }
+        if(!isiNArr){
+            if(usersOnlineInChat[e]){
+                if(usersOnlineInChat[e] != username){
+                    seenUSersInChat[seenUSersInChat.length] = usersOnlineInChat[e]
+                }
+            }
+        }
+    }
+    
+                
+
+    //console.log(seenUSersInChat)
+    //console.log(usersOnlineInChat)
+
+
+    
+    for( let e = 0; e < seenUSersInChat.length; e++){
+        if(e == seenUSersInChat.length-1){
+            seenSTR+= seenUSersInChat[e]
+        } else {
+            seenSTR+= seenUSersInChat[e] +', '
+        }
+    }
+
+    seen.text(seenSTR)
 }

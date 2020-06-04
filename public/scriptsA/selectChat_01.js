@@ -3,7 +3,8 @@ const chatSelect = $(".chatSelect")
 const customChat = $("#customChat")
 const chatP = $("#chatP")
 const bodyWeb = $("#bodyWeb")
-const seen = $("#seen")
+
+
 
 var imInChats = false;
 

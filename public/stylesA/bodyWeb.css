@@ -24,12 +24,18 @@
 
             }
                 
-        #typings, #seen{
+        #typings, #seen, #online{
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             
             height: 1rem;
+        }
+        #online{
+            background-color: rgb(34, 34, 34);
+            color: lightgray;
+            font-size: .8rem;
+            padding: .3rem;
         }
         #seen{
             text-align: right;
@@ -44,7 +50,7 @@
             font-size: .9rem;
             color: rgb(0, 1, 59);
         }
-
+        
         #inputs{
             display: flex;
         }
