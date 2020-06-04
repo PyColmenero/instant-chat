@@ -48,7 +48,7 @@ const server = app.listen(app.get('port'), () => {
 
                 if(!isInIt){ 
                     try{
-                        usersConnected[usersConnected.length] = {id: socket.id, usern: username, chat: ' '}
+                        usersConnected[usersConnected.length] = {id: socket.id, usern: username, chat: ' ', line: false}
                     } catch(e)
                     {
                         usersConnected[0] = {id: socket.id, usern: username}
@@ -117,10 +117,48 @@ const server = app.listen(app.get('port'), () => {
                 io.sockets.emit('newMessage', {msgCont: data, msgID: idMSG})
             })
 
+        //Get EveryUsers
+            socket.on('everyUsers', (data) => {
+                realID = undefined
+                for(let e = 0; e < usersConnected.length; e++){
+                    if(usersConnected[e].usern == data){
+                        realID = usersConnected[e].id;
+                        break;
+                    }
+                }
+                if(realID){
+                    io.sockets.connected[realID].emit('loadEveryUsers', usersConnected)
+                }
+                
+            })
+
         //Send Like
             socket.on('emitLike', (data) => {
                 io.sockets.emit('newLike', data)
             })
+
+            //User Online
+                socket.on('onlineUser', (data) => {
+                    for(let e = 0; e < usersConnected.length; e++){
+                        if(usersConnected[e].usern == data){
+                            usersConnected[e].line = true
+                            break;
+                        }
+                    }
+                    socket.broadcast.emit('userFocused')
+                    console.log(usersConnected)
+                })
+            //User Offline
+                socket.on('offlineUser', (data) => {
+                    for(let e = 0; e < usersConnected.length; e++){
+                        if(usersConnected[e].usern == data){
+                            usersConnected[e].line = false
+                            break;
+                        }
+                    }
+                    socket.broadcast.emit('userDesFocused')
+                    console.log(usersConnected)
+                })
 
 
         // Is Typing

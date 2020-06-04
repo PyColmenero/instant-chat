@@ -16,7 +16,7 @@ var chat = undefined
 var lastMsg = true;
 var lastOtherMsg = true;
 
-
+var totalLastMSG = false;
 
 
 msgInput.click(function(){
@@ -70,10 +70,13 @@ socket.on('newMessage', function(data){
             output.append('<div data-id="'+data.msgID+'" class="ownMSG noselect"><div data-users="" class="msg '+classOwn+'"> <p>'+data.msgCont.message+'</p> <div class="otherLikeOwn" style="display: none;" >0</div><div class="myLikeOwn" data-status="no" style="display: none;" >0</div> </div></div>')
             lastMsg = false;
             lastOtherMsg = true;
+            totalLastMSG = true
+            
         } else {
             output.append('<div data-id="'+data.msgID+'" class="otherMSG noselect"><div data-users="" class="msg '+classOther+'"><label><label><b>'+data.msgCont.username+':</b> </label>  <label>'+data.msgCont.message+'</label></label><div class="otherLikeOther" style="display: none;" >0</div><div class="myLikeOther" data-status="no" style="display: none;" ></div></div></div>')
             lastMsg = true;
             lastOtherMsg = false;
+            totalLastMSG = false
         }
 
         elem = document.getElementById('output');
@@ -91,6 +94,8 @@ socket.on('newMessage', function(data){
     
         }
         proveTypings()
+        getUsers()
+        seen.text('')
         msg = $(".msg")
     }
 })

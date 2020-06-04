@@ -3,6 +3,9 @@ const chatSelect = $(".chatSelect")
 const customChat = $("#customChat")
 const chatP = $("#chatP")
 const bodyWeb = $("#bodyWeb")
+const seen = $("#seen")
+
+var imInChats = false;
 
 chatSelect.click(function(){
 
@@ -27,19 +30,29 @@ chatSelect.click(function(){
 
         changeOutHeight()
         closeNav()
+        
+        makeMeOnline()
+        seen.text('')
+        getUsers()
     }
 
 })
 
 customChat.click(function(){
     if(username){
+
+        chat = undefined
+
         chatusername.css("display", "none")
         customChatCont.css("display", "block")
         bodyWeb.css("display", "none")
         selectOne.css("display", "none")
 
         changeOutHeight()
-        closeNav()
+
+        makeMeOffline()
+        closeNav()        
+        seen.text(currentSTR)
     }
 })
 
@@ -60,4 +73,8 @@ enterCustomChat.click(function(){
 
     changeOutHeight()
 
+    makeMeOnline()
+    seen.text(currentSTR)
+    getUsers()
+    
 })

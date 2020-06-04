@@ -24,17 +24,27 @@
 
             }
                 
-        #typings{
-            padding: .5rem 1rem;
-
+        #typings, #seen{
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             
-            height: 1.5rem;
-            color: rgb(0, 1, 59);
-            background-color: rgb(255, 196, 196);
+            height: 1rem;
         }
+        #seen{
+            text-align: right;
+            background-color: #FAFAFA;
+            color: grey;
+            font-size: .8rem;
+            padding: .1rem 1rem;
+        }
+        #typings{
+            padding: .2rem 1rem;
+            background-color: rgb(230, 230, 230);
+            font-size: .9rem;
+            color: rgb(0, 1, 59);
+        }
+
         #inputs{
             display: flex;
         }

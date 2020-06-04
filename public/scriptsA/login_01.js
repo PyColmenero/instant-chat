@@ -34,7 +34,7 @@ function tryLogging(){
             socket.emit('validateUsername', username)
             localStorage.setItem("username", username)
         } else {
-            validP1.text("More than 3 and less than 16 length")
+            validP1.text("More than 3 and less than 26 length")
         }
     } else {
         validP1.text("Write something...")
@@ -51,6 +51,8 @@ socket.on('confirmUsernameValidation', function(data){
         currentUsernameP.text(username)
 
         openNav()
+
+        imInChats = false;
         
     } else {
         validP1.text(data)
