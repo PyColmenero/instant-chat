@@ -56,6 +56,8 @@ function sendMSG(){
         //Scroll
             appendOutputDOM = appendOutput.get()
             appendOutputDOM.scrollTop = appendOutputDOM.scrollHeight;
+
+            seen.text('')
     }
 }
 
@@ -112,7 +114,7 @@ socket.on('newMessage', function(data){
         proveTypings()
         getUsers()
 
-        seen.text('')
+        
     }
 })
 

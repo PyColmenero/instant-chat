@@ -50,12 +50,15 @@ aside{
                 .chatSelect{
                     background-color: rgb(226, 226, 226);
 
-                    padding: .2rem 0;
+                    padding: .2rem;
                     margin-bottom: .3rem;
                 }
                 .selectedC{
                     text-decoration: underline;
                 }
+                    .deleteChat:hover{
+                        background-color: rgb(187, 187, 187);
+                    }
                 #everyChat label{
                     
                    padding: 0 .5rem;

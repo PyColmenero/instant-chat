@@ -21,8 +21,17 @@ enterChat.click(function(e){
 
 })
 usernameInput.on('keyup', function (e) {
+    cVal = usernameInput.val()
+
     if (e.keyCode === 13) {
         tryLogging()
+    } else {
+        if(e.keyCode === 32) {
+            usernameInput.val( cVal.replace( /\s/g, '') )
+            validP1.text('Spaces are not allowed')
+        } else {
+            validP1.text('')
+        }
     }
 });
 
@@ -31,6 +40,7 @@ function tryLogging(){
 
     if(username){
         if(username.length > 3 && username.length < 36){
+            username.replace( /\s/g, '')
             socket.emit('validateUsername', username)
             localStorage.setItem("username", username)
         } else {

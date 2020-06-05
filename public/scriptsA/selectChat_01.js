@@ -9,56 +9,58 @@ var imInChats = false;
 $("#appendChats").on("click",".chatSelect",function(){
 
     if(username){
+        if(!deleteButton){
+            chatAppend = $(".chatAppend")
+            chatAppend.css("display","none")
+            
+            chat = $(this).children().eq(0).text()
 
-        chatAppend = $(".chatAppend")
-        chatAppend.css("display","none")
-        
-        chat = $(this).children().eq(0).text()
+            //Get Output if exist, else it creates it
+                appendOutput = $("#op"+chat)
 
-        //Get Output if exist, else it creates it
-            appendOutput = $("#op"+chat)
+                if(appendOutput.length >= 1){
+                    appendOutput.css("display","block")
+                    
+                } else {
+                    output.append('<div id="op'+chat+'" class="chatAppend" style="display:block;"></div>')
+                }
+                appendOutput = $("op"+chat)
 
-            if(appendOutput.length >= 1){
-                appendOutput.css("display","block")
-                
-            } else {
-                output.append('<div id="op'+chat+'" class="chatAppend" style="display:block;"></div>')
-            }
-            appendOutput = $("op"+chat)
+            //display output
+            chatusername.css("display", "none")
+            customChatCont.css("display", "none")
+            bodyWeb.css("display", "block")
+            selectOne.css("display", "none")
 
-        //display output
-        chatusername.css("display", "none")
-        customChatCont.css("display", "none")
-        bodyWeb.css("display", "block")
-        selectOne.css("display", "none")
+            //Change my chat on server
+            socket.emit('changeChat', {usern: username, chat: chat})
 
-        //Change my chat on server
-        socket.emit('changeChat', {usern: username, chat: chat})
+            //Append chat name to Info
+            chatP.text(chat)
 
-        //Append chat name to Info
-        chatP.text(chat)
+            //Select chat
+            chatSelect.attr("class", "chatSelect")
+            $(this).attr("class", "chatSelect selectedC")
 
-        //Select chat
-        chatSelect.attr("class", "chatSelect")
-        $(this).attr("class", "chatSelect selectedC")
+            //Show Keyboard
+                msgInput.focus()
 
-        //Show Keyboard
-            msgInput.focus()
+            //Close Nav and make sure OutPut is Ok
+                changeOutHeight()
+                closeNav()
 
-        //Close Nav and make sure OutPut is Ok
-            changeOutHeight()
-            console.log("resize")
-            closeNav()
+            //Online, Seen
+                makeMeOnline()
+                getUsers()
+                seen.text('')
 
-        //Online, Seen
-            makeMeOnline()
-            getUsers()
-            seen.text('')
-
-        // Make first msg
-            totalLastMSG = false;
-            lastMsg = true;
-            lastOtherMsg = true
+            // Make first msg
+                totalLastMSG = false;
+                lastMsg = true;
+                lastOtherMsg = true
+        } else {
+            deleteButton = false;
+        }
     }
 
 })
@@ -99,7 +101,7 @@ function changeCustomChat(){
             
         } else {
             output.append('<div id="op'+chat+'" class="chatAppend" style="display:block;"></div>')
-            appendChats.append('<li class="chatSelect"> <p class="noselect">'+chat+'</p><label id="'+chat+'C"> </label></li>')
+            appendChats.append('<li class="chatSelect"> <p class="noselect">'+chat+'</p><label class="deleteChat" id="'+chat+'C"> x </label></li>')
         }
         appendOutput = $("op"+chat)
 
@@ -146,6 +148,8 @@ function changeCustomChat(){
     }
     console.log(JSON.parse(localStorage.getItem("customChats")))
 
+    customChatInput.val('')
+
 }
 
 //Enter Custom chat
@@ -153,7 +157,18 @@ enterCustomChat.click(function(){
     changeCustomChat()
 })
 customChatInput.on('keyup', function (e) {
-    if (e.keyCode === 13) {
+    cVal = customChatInput.val()
+
+    if(e.keyCode === 13) {
+        cVal.replace( /\s/g, '')
         changeCustomChat()
+    } else {
+        if(e.keyCode === 32) {
+            customChatInput.val( cVal.replace( /\s/g, '') )
+            $("#validP2").text('Spaces are not allowed')
+        } else {
+            $("#validP2").text('')
+        }
     }
+    console.log(e.keyCode)
 });
