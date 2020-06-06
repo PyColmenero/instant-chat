@@ -52,10 +52,9 @@ function sendMSG(){
         //append red MSG
         classOwn = lastMsg ? "firstM" : ""
         appendOutput.append('<div class="ownMSGOnload noselect"><div class="msgOnLoad '+classOwn+'"> <p>'+msg+'</p> <div class="otherLikeOwn" style="display: none;" >0</div><div class="myLikeOwn" data-status="no" style="display: none;" >0</div> </div></div>')
-    
+            
         //Scroll
-            appendOutputDOM = appendOutput.get()
-            appendOutputDOM.scrollTop = appendOutputDOM.scrollHeight;
+            appendOutput.scrollTop(appendOutput.prop("scrollHeight"));
 
             seen.text('')
     }
@@ -71,8 +70,6 @@ socket.on('newMessage', function(data){
     if(username && chat == data.msgCont.chat){
 
         appendOutput = $("#op"+chat)
-
-        console.log(appendOutput)
         
         classOwn = lastMsg ? "firstM" : ""
         classOther = lastOtherMsg ? "firstOM" : ""
@@ -94,9 +91,8 @@ socket.on('newMessage', function(data){
             totalLastMSG = false
         }
 
-
-        appendOutputDOM = appendOutput.get()
-        appendOutputDOM.scrollTop = appendOutputDOM.scrollHeight;
+        
+        appendOutput.scrollTop(appendOutput.prop("scrollHeight"));
 
 
         for(let e = 0; e < everyTypings.length; e++){

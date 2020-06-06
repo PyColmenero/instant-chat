@@ -11,7 +11,6 @@ const typings = $("#typings")
 msgInput.on('keyup', function (e) {
     if (e.keyCode != 13) {
         emitTypings()
-        console.log(appendOutput)
         appendOutputDOM = appendOutput.get()
         appendOutputDOM.scrollTop = appendOutputDOM.scrollHeight;
     }

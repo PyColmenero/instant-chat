@@ -59,7 +59,7 @@ $("#appendChats").on("click",".deleteChat",function(){
 
     bodyWeb.css("display","none")
     selectOne.css("display","flex")
-
+    chatusername.css("display","none")
 
     $("#opSevilla").css("display","block")
 
