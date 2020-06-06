@@ -1,5 +1,5 @@
 
-const chatSelect = $(".chatSelect")
+var chatSelect = $(".chatSelect")
 const customChat = $("#customChat")
 const chatP = $("#chatP")
 const bodyWeb = $("#bodyWeb")
@@ -39,6 +39,7 @@ $("#appendChats").on("click",".chatSelect",function(){
             chatP.text(chat)
 
             //Select chat
+            chatSelect = $(".chatSelect")
             chatSelect.attr("class", "chatSelect")
             $(this).attr("class", "chatSelect selectedC")
 
@@ -161,6 +162,7 @@ customChatInput.on('keyup', function (e) {
 
     if(e.keyCode === 13) {
         cVal.replace( /\s/g, '')
+        chatSelect = $(".chatSelect")
         changeCustomChat()
     } else {
         if(e.keyCode === 32) {

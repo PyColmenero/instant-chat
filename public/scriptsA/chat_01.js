@@ -51,7 +51,7 @@ function sendMSG(){
 
         //append red MSG
         classOwn = lastMsg ? "firstM" : ""
-        appendOutput.append('<div class="ownMSGOnload noselect"><div class="msgOnLoad '+classOwn+'"> <p>'+msg+'</p> <div class="otherLikeOwn" style="display: none;" >0</div><div class="myLikeOwn" data-status="no" style="display: none;" >0</div> </div></div>')
+        appendOutput.append('<div class="ownMSGOnload noselect"><div class="msgOnLoad '+classOwn+'"> <p>'+msg+'</p> <div class="otherLikeOwn noselect" style="display: none;" >0</div><div class="myLikeOwn noselect" data-status="no" style="display: none;" >0</div> </div></div>')
             
         //Scroll
             appendOutput.scrollTop(appendOutput.prop("scrollHeight"));
@@ -76,7 +76,7 @@ socket.on('newMessage', function(data){
         seenUSersInChat = []
 
         if(data.msgCont.username == username){
-            appendOutput.append('<div data-id="'+data.msgID+'" class="ownMSG noselect"><div data-users="" class="msg '+classOwn+'"> <p>'+data.msgCont.message+'</p> <div class="otherLikeOwn" style="display: none;" >0</div><div class="myLikeOwn" data-status="no" style="display: none;" >0</div> </div></div>')
+            appendOutput.append('<div data-id="'+data.msgID+'" class="ownMSG"><div data-users="" class="msg '+classOwn+'"> <label class="noselect"><label></label> <label class="textMSG">'+data.msgCont.message+'</label></label> <div class="otherLikeOwn noselect" style="display: none;" >0</div><div class="myLikeOwn noselect" data-status="no" style="display: none;" >0</div> </div></div>')
             lastMsg = false;
             lastOtherMsg = true;
             totalLastMSG = true;
@@ -85,7 +85,7 @@ socket.on('newMessage', function(data){
             everyOnLoadMsg.remove();
 
         } else {
-            appendOutput.append('<div data-id="'+data.msgID+'" class="otherMSG noselect"><div data-users="" class="msg '+classOther+'"><label><label><b>'+data.msgCont.username+':</b> </label>  <label>'+data.msgCont.message+'</label></label><div class="otherLikeOther" style="display: none;" >0</div><div class="myLikeOther" data-status="no" style="display: none;" ></div></div></div>')
+            appendOutput.append('<div data-id="'+data.msgID+'" class="otherMSG"><div data-users="" class="msg '+classOther+'"><label class="noselect"><label><b>'+data.msgCont.username+':</b> </label>  <label class="textMSG">'+data.msgCont.message+'</label></label><div class="otherLikeOther noselect" style="display: none;" >0</div><div class="myLikeOther noselect" data-status="no" style="display: none;" ></div></div></div>')
             lastMsg = true;
             lastOtherMsg = false;
             totalLastMSG = false

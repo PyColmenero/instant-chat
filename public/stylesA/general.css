@@ -32,6 +32,26 @@ body{
     display: flex;
 }
     
+#copy{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-radius: 3px;
+    background-color: #1E1E1E;
+    padding: .5rem 1rem;
+    color: ivory;
+
+    box-shadow: 0 0 5px 0 ivory;
+
+    transition: .2s linear;
+    transform: translate(-50%, -150%);
+}
+
+
+
+
+
+
 #selectOne{
     width: 70%;
     height: 80vh;

@@ -31,37 +31,39 @@ var deleteButton = false;
 // Delete Chat Saved
 $("#appendChats").on("click",".deleteChat",function(){
 
-    deleteButton = true;
+    if(username){
+        deleteButton = true;
 
-    cButton = $(this)
-    chatSelected = cButton.parent()
-    data = chatSelected.children().eq(0).text()
+        cButton = $(this)
+        chatSelected = cButton.parent()
+        data = chatSelected.children().eq(0).text()
 
-    
-    currentChats = localStorage.getItem("customChats")
+        
+        currentChats = localStorage.getItem("customChats")
 
-    isInIt = false;
-    index = -1
-    if(currentChats){
-        currentChats = JSON.parse(currentChats)
+        isInIt = false;
+        index = -1
+        if(currentChats){
+            currentChats = JSON.parse(currentChats)
 
-        currentChats.splice(currentChats.indexOf(data), 1);
+            currentChats.splice(currentChats.indexOf(data), 1);
 
-        currentChats = JSON.stringify(currentChats)
+            currentChats = JSON.stringify(currentChats)
 
-        localStorage.setItem("customChats", currentChats)
+            localStorage.setItem("customChats", currentChats)
+        }
+
+        chatSelected.remove();
+
+        currentChat = $("#op"+data)
+        currentChat.remove();
+
+        bodyWeb.css("display","none")
+        selectOne.css("display","flex")
+        chatusername.css("display","none")
+
+        $("#opSevilla").css("display","block")
+
     }
-
-    chatSelected.remove();
-
-    currentChat = $("#op"+data)
-    currentChat.remove();
-
-    bodyWeb.css("display","none")
-    selectOne.css("display","flex")
-    chatusername.css("display","none")
-
-    $("#opSevilla").css("display","block")
-
     
 })

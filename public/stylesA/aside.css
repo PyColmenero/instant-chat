@@ -87,9 +87,6 @@ aside{
 }
 
 @media screen and (max-device-aspect-ratio: 1/1) {
-    #web{
-        position: relative;
-    }
         aside{
             z-index: 1000;
             position: absolute;
