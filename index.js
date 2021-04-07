@@ -127,7 +127,7 @@ const server = app.listen(app.get('port'), () => {
                     }
                 }
                 if(realID){
-                    console.log("-")
+                    //console.log("-")
                     io.sockets.connected[realID].emit('loadEveryUsers', usersConnected)
                 }
                 
